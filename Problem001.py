@@ -5,13 +5,14 @@
 import time
 start = time.clock()
 
-lst = []
-for i in range(1000):
-	if i%3 == 0 or i%5 == 0:
-		lst.append(i)
-	else:
-		pass
-print (sum(lst))
+def SumOfMultiples(target, div):
+	n = target//div
+	return div*(n*(n+1))//2
+	
+def SumOfMultiples_2(target, div1, div2):
+	return SumOfMultiples(target, div1) + SumOfMultiples(target, div2) - SumOfMultiples(target, div1*div2)
+
+print (SumOfMultiples_2(999,3,5))
 
 end = time.clock()
 print ("Running time: %s seconds" % (end - start))

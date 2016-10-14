@@ -1,2 +1,2 @@
-# Euler-Project
+# Euler Project
 https://projecteuler.net

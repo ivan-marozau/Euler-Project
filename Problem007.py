@@ -5,24 +5,31 @@
 import time
 start = time.clock()
 
-def prime_index(n):
-	lst = [2]
-	x = 3
-	while len(lst) < n:
-		i = 0
-		while lst[i]**2 <= x:
-			if x%lst[i] == 0:
+def isPrime(n):
+	if n == 1: return False
+	elif n < 4: return True
+	elif n%2 == 0: return False
+	elif n < 9: return True
+	elif n%3 == 0: return False
+	else:
+		f = 5
+		while f*f <= n:
+			if n%f == 0 or n%(f+2) == 0:
+				return False
 				break
-			else:
-				i += 1
-		if lst[i]**2 > x:
-			lst.append(x)
-		else:
-			pass
-		x += 2
-	return lst[-1]
+			else: f+=6
+		return True
+
+def prime_index(limit):
+	count = 1
+	candidate = 1
+	while count < limit:
+		candidate += 2
+		if isPrime(candidate):
+			count += 1
+	return candidate
 	
-print (prime_index(10001))
+print (prime_index(100001))
 		
 end = time.clock()
 print ("Running time: %s seconds" % (end - start))

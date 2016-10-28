@@ -7,14 +7,17 @@
 import time
 start = time.clock()
 
-def diff_sqs(n):
-	x, y = 0, 0
-	for i in range(1, n+1):
-		x += i
-		y += i**2
-	return (x*x)-y
+def sq_of_sum(n):
+	return int((n*(n+1)/2)**2)
 	
-print (diff_sqs(100))
+def sum_of_sqs(n):
+	return int(((n**3)/3)+((n**2)/2)+(n/6))
+	
+def diff_sqs(n):
+	return sq_of_sum(n) - sum_of_sqs(n)
+
+n = int(input('Enter the value: '))	
+print (diff_sqs(n))
 		
 end = time.clock()
 print ("Running time: %s seconds" % (end - start))

@@ -29,7 +29,7 @@ def prime_index(limit):
 			count += 1
 	return candidate
 	
-print (prime_index(100001))
+print (prime_index(10001))
 		
 end = time.clock()
 print ("Running time: %s seconds" % (end - start))

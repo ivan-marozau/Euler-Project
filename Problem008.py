@@ -46,8 +46,6 @@ def max_product_s(str):
 		a = str[i-13:i]
 		if product_s(a) > x:
 			x = product_s(a)
-		else:
-			pass
 		i += 1
 	return (x)
 	

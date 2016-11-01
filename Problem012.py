@@ -14,9 +14,6 @@
 import time
 start = time.clock()
 
-def triangle(n):
-	return n*(n+1)//2
-
 def numFactors(n):
 	a = 2*sum([1 for i in range(1,int(n**0.5)+1) if n % i == 0])
 	if n**0.5 == int(n**0.5):
@@ -25,10 +22,10 @@ def numFactors(n):
 		return a
 
 num = 1
-a = 0
-while numFactors(a) < 500:
-	a = triangle(num)
+a = 1
+while numFactors(a) <= 500:
 	num += 1
+	a += num
 print (a)
 
 end = time.clock()

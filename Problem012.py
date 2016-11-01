@@ -15,9 +15,10 @@ import time
 start = time.clock()
 
 def divisors(n):
-	divisors_count = 2*sum([1 for i in range(1,int(n**0.5)+1) if n % i == 0])
-	if n**0.5 == int(n**0.5): return divisors_count - 1
-	return divisors_count
+	if n == 1: return 1
+	divisors_count = 2*sum([1 for i in range(2,int(n**0.5)+1) if n % i == 0])
+	if n**0.5 == int(n**0.5): return divisors_count + 1
+	return divisors_count + 2
 
 num = 1
 triangle = 1

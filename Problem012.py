@@ -14,19 +14,17 @@
 import time
 start = time.clock()
 
-def numFactors(n):
-	a = 2*sum([1 for i in range(1,int(n**0.5)+1) if n % i == 0])
-	if n**0.5 == int(n**0.5):
-		return a - 1
-	else:
-		return a
+def divisors(n):
+	divisors_count = 2*sum([1 for i in range(1,int(n**0.5)+1) if n % i == 0])
+	if n**0.5 == int(n**0.5): return divisors_count - 1
+	return divisors_count
 
 num = 1
-a = 1
-while numFactors(a) <= 500:
+triangle = 1
+while divisors(triangle) <= 500:
 	num += 1
-	a += num
-print (a)
+	triangle += num
+print (triangle)
 
 end = time.clock()
 print ("Running time: %s seconds" % (end - start))

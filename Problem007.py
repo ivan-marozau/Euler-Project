@@ -32,4 +32,4 @@ def prime_index(limit):
 print (prime_index(10001))
 		
 end = time.clock()
-print ("Running time: %s seconds" % (end - start))
+print ("Running time: %s ms" % round((end - start)*1000))

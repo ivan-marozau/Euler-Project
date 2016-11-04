@@ -11,7 +11,7 @@ def sq_of_sum(n):
 	return (n*(n+1)/2)**2
 	
 def sum_of_sqs(n):
-	return ((n**3)/3)+((n**2)/2)+(n/6)
+	return (n*(n+1)*(2*n+1))/6
 	
 def diff_sqs(n):
 	return int(sq_of_sum(n) - sum_of_sqs(n))

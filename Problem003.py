@@ -4,23 +4,12 @@
 
 import time
 
-def c_range(n):
-    cur = 5
-    incr = 2
-    while cur < n+1:
-        yield cur
-        cur += incr
-        incr = 6 - incr
-
-def sieve(end):
-    primes_lst = [2, 3]
-    sieve_lst = [True] * (end+1)
-    for num in c_range(end):
-        if sieve_lst[num]:
-            primes_lst.append(num)
-            for multiple in range(num**2, end+1, num):
-                sieve_lst[multiple] = False
-    return primes_lst
+def sieve(n):
+    check_lst = [True] * (n//2)
+    for i in range(3,int(n**0.5)+1,2):
+        if check_lst[i//2]:
+            check_lst[i*i//2::i] = [False] * ((n-i*i-1)//(2*i)+1)
+    return [2] + [2*i+1 for i in range(1,n//2) if check_lst[i]]
 
 def lpf_sieve(n):
 	if n == 1: return None
@@ -53,7 +42,7 @@ def lpf(n):
 			return lpf_sieve(n)
 	return i
 	
-initial_number = int(input('Enter the number:\n'))
+initial_number = 600851475145 #int(input('Enter the number:\n'))
 n = initial_number
 
 start = time.clock()

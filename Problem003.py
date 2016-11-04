@@ -42,7 +42,7 @@ def lpf(n):
 			return lpf_sieve(n)
 	return i
 	
-initial_number = 600851475145 #int(input('Enter the number:\n'))
+initial_number = int(input('Enter the number:\n'))
 n = initial_number
 
 start = time.clock()

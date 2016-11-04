@@ -42,4 +42,4 @@ def SumOfEvenFib(limit):
 print (SumOfEvenFib(4*10**6))
 
 end = time.clock()
-print ("Running time: %s seconds" % (end - start))
+print ("Running time: %s ms" % round((end - start)*1000))

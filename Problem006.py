@@ -8,16 +8,16 @@ import time
 start = time.clock()
 
 def sq_of_sum(n):
-	return int((n*(n+1)/2)**2)
+	return (n*(n+1)/2)**2
 	
 def sum_of_sqs(n):
-	return int(((n**3)/3)+((n**2)/2)+(n/6))
+	return ((n**3)/3)+((n**2)/2)+(n/6)
 	
 def diff_sqs(n):
-	return sq_of_sum(n) - sum_of_sqs(n)
+	return int(sq_of_sum(n) - sum_of_sqs(n))
 
 n = int(input('Enter the value: '))	
 print (diff_sqs(n))
 		
 end = time.clock()
-print ("Running time: %s seconds" % (end - start))
+print ("Running time: %s ms" % round((end - start)*1000))

@@ -16,4 +16,4 @@ for x in range(990, 100, -11):
 print (z)
 
 end = time.clock()
-print ("Running time: %s seconds" % (end - start))
+print ("Running time: %s ms" % round((end - start)*1000))
